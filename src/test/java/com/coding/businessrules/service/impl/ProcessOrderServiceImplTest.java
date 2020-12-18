@@ -99,4 +99,13 @@ class ProcessOrderServiceImplTest {
         assertThat(response.equals("Upgraded membership"));
     }
 
+    @Test
+    public void errorOutForWrongProduct() {
+
+        String product = "Invalid product";
+
+        String response = processOrderServiceImpl.processBusinessOrder(product);
+        assertThat(response.equals("Enter a valid product"));
+    }
+
 }
